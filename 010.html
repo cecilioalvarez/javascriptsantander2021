@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script type="text/javascript">
+        
+        function nuevo() {
+            // creo dos variables el parrafo y su texto
+            
+            var parrafo=document.createElement("p");
+
+            var texto= document.createTextNode("hola");
+
+            //añado al parrafo el texto
+            parrafo.appendChild(texto);
+            //selecciono la etiqueta de body del docuemnto
+            var cuerpo=document.getElementById("cuerpo");
+            //añado el parrafo con su contenido al documento
+            cuerpo.appendChild(parrafo);
+        }
+           
+        
+        </script>
+    </head>
+    <body id="cuerpo">
+       
+        <p><input type="button"
+             value="nuevo" onclick="nuevo()"/></p>
+         
+    </body>
+</html>

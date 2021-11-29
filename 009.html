@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script type="text/javascript">
+        
+           function mas() {
+
+            var texto= document.getElementById("numero");
+            var numero= parseInt(texto.innerText);
+            numero++;
+            texto.innerHTML=numero;
+
+           }
+
+           function menos() {
+
+            var texto= document.getElementById("numero");
+            var numero= parseInt(texto.innerText);
+            numero--;
+            texto.innerHTML=numero;
+           }
+        
+        </script>
+    </head>
+    <body>
+        <p id="numero">0</p>
+        <p><input type="button"
+             value="+" onclick="mas()"/></p>
+             <p><input type="button"
+                value="-" onclick="menos()"/></p>
+    </body>
+</html>
