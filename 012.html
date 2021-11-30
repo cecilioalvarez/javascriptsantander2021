@@ -8,10 +8,13 @@
             var cuerpo= document.getElementById("cuerpo");
 
             for (var i=0;i<lista.length;i++) {
-
+                // creo un elemento p en memoria
                 var elemento= document.createElement("p");
+                //nodo de texto que esta en memoria
                 var texto= document.createTextNode(lista[i]);
+                
                 elemento.appendChild(texto);
+
                 cuerpo.appendChild(elemento);
             }
           

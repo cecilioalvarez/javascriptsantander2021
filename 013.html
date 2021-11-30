@@ -2,11 +2,16 @@
     <head>
         <script type="text/javascript">
         
-        var lista=["pepe","juan","ama","maria"];
+       
         function nuevo() {
          
-           
+           var elementos= document.getElementsByClassName("numeros");
+            var total=0;
+           for (var i=0;i<elementos.length;i++) {
 
+                total=total+parseInt(elementos[i].innerText);
+           }
+           alert(total);
         }
            
         
@@ -19,13 +24,13 @@
             <input type="button"
              value="nuevo" onclick="nuevo()"/>
 
-             <p>5</p>
-             <p>10</p>
+             <p class="numeros">5</p>
+             <p class="numeros">10</p>
              <p>**********</p>
-             <p>20</p>
+             <p class="numeros">20</p>
              <p>**********</p>
-             <p>15</p>
-             <p>12</p>
+             <p class="numeros">15</p>
+             <p class="numeros">12</p>
           
     </body>
 </html>
