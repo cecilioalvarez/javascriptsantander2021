@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <style>
+          #ultimo{
+               cursor: pointer;
+           }
+        </style>
+        <script type="text/javascript">
+        
+        function crearTabla() {
+
+            /*ul/li*/ 
+            var miul=document.createElement("ul");
+            var mili1=document.createElement("li");
+            var texto1= document.createTextNode("primero");
+
+
+            var mili2=document.createElement("li");
+            var texto2= document.createTextNode("segundo"); 
+            mili1.appendChild(texto1);
+            miul.appendChild(mili1);
+            
+            mili2.appendChild(texto2);
+            miul.appendChild(mili2);
+            
+            var zona1= document.getElementById("zona1");
+            zona1.appendChild(miul);
+           
+        }
+        </script>
+    </head>
+    <body id="cuerpo">
+            <p id="zona1">
+
+            </p>
+        
+          
+            <input type="button" value="crearTabla" onclick="crearTabla()"/>     
+          
+    </body>
+</html>

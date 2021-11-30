@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <style>
+          #ultimo{
+               cursor: pointer;
+           }
+        </style>
+        <script type="text/javascript">
+        
+       
+        function addFila() {
+            
+          var nombre= document.getElementById("nombre").value;
+          
+          var tr= document.createElement("tr");
+          var td= document.createElement("td");
+          tr.appendChild(td);
+
+          var nodoTextoNombre= document.createTextNode(nombre);
+          td.appendChild(nodoTextoNombre);
+         
+          var mitable= document.getElementById("mitabla");
+          mitabla.appendChild(tr);
+         
+        }
+           
+        
+        </script>
+    </head>
+    <body id="cuerpo">
+       
+       
+           <table id="mitabla">
+              <tr>
+                  <td>Antonio</td>
+              </tr>
+           </table>
+           
+           <input type="text" id="nombre"/>
+            <input type="button" value="nuevo" onclick="addFila()"/>     
+          
+    </body>
+</html>
