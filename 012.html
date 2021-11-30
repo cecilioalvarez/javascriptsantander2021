@@ -2,14 +2,20 @@
     <head>
         <script type="text/javascript">
         
+        var lista=["pepe","juan","ama","maria"];
         function nuevo() {
          
-            var inputnumero=document.getElementById("minumero");
-            alert(inputnumero.value);
-            var etiqueta= document.createElement("p");
-            etiqueta.innerText=inputnumero.value;
-            var cuerpo=document.getElementById("cuerpo");
-            cuerpo.appendChild(etiqueta);
+            var cuerpo= document.getElementById("cuerpo");
+
+            for (var i=0;i<lista.length;i++) {
+
+                var elemento= document.createElement("p");
+                var texto= document.createTextNode(lista[i]);
+                elemento.appendChild(texto);
+                cuerpo.appendChild(elemento);
+            }
+          
+
 
         }
            
