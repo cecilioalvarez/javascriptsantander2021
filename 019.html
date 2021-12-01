@@ -5,12 +5,26 @@
       td {
         border: 1px solid black;
       }
-      #erroredad {
+      #erroredad,
+      #errornombre {
         color: red;
         display: none;
       }
     </style>
     <script type="text/javascript">
+
+      function validarNombreCaja(event) {
+
+        var errornombre = document.getElementById("errornombre");
+           if (event.target.value!="") {
+          
+            errornombre.style.display = "none";
+           }else {
+            errornombre.style.display = "inline";
+           }
+
+      }
+
       function validar() {
         var nombre = document.getElementById("nombre").value;
         var edad = document.getElementById("edad").value;
@@ -20,7 +34,8 @@
           return true;
         } else {
           if (nombre == "") {
-            alert("falta nombre");
+            var errornombre = document.getElementById("errornombre");
+            errornombre.style.display = "inline";
           }
           if (edad == "") {
             var erroredad = document.getElementById("erroredad");
@@ -33,7 +48,10 @@
   </head>
   <body id="cuerpo">
     <form action="destino" onsubmit="return validar()">
-      <p>Nombre:<input type="text" name="nombre" id="nombre" /></p>
+      <p>
+        Nombre:<input type="text" name="nombre" id="nombre" onkeyup="validarNombreCaja(event)" />
+        <span id="errornombre">falta el nombre</span>
+      </p>
       <p>
         Edad<input type="text" name="edad" id="edad" />
         <span id="erroredad">falta la edad</span>
