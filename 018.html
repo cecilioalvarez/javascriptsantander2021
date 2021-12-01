@@ -1,14 +1,17 @@
 <html>
     <head>
         <style>
-        
+        table ,td {
+            border:1px solid black;
+        }
         </style>
         <script type="text/javascript">
         
         function crearTabla() {
 
-            /*ul/li*/ 
+           
             var tr=document.createElement("tr");
+
             var td=document.createElement("td");
             var nombre=document.getElementById("nombre").value;
             var nodoNombre= document.createTextNode(nombre);
@@ -22,7 +25,7 @@
 
 
             tr.appendChild(td2);
-            td.appendChild(nodoApellidos);
+            td2.appendChild(nodoApellidos);
 
 
             var tabla1= document.getElementById("tabla1");
@@ -34,6 +37,7 @@
     </head>
     <body id="cuerpo">
             <table id="tabla1">
+
 
             </table>
         

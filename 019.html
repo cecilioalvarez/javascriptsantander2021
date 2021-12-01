@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <style>
+        table ,td {
+            border:1px solid black;
+        }
+        </style>
+        <script type="text/javascript">
+        
+        function validar() {
+
+            var nombre=document.getElementById("nombre").value;
+
+           if (nombre!="") {
+               alert ("todo ok");
+               return true;
+           }else {
+               alert("el nombre falta")
+            return false;
+           }
+          
+           
+        }
+        </script>
+    </head>
+    <body id="cuerpo">
+           <form action="destino" onsubmit="return validar()">
+        
+            Nombre:<input type="text" name="nombre" id="nombre"/>
+            Edad<input type="text" name="edad" id="edad"/>
+            
+            <input type="submit" value="enviar" />     
+        </form>
+    </body>
+</html>
