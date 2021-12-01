@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <style>
+        
+        </style>
+        <script type="text/javascript">
+        
+        function crearTabla() {
+
+            /*ul/li*/ 
+            var tr=document.createElement("tr");
+            var td=document.createElement("td");
+            var nombre=document.getElementById("nombre").value;
+            var nodoNombre= document.createTextNode(nombre);
+
+            var td2=document.createElement("td");
+            var apellidos=document.getElementById("apellidos").value;
+            var nodoApellidos= document.createTextNode(apellidos);
+
+            tr.appendChild(td);
+            td.appendChild(nodoNombre);
+
+
+            tr.appendChild(td2);
+            td.appendChild(nodoApellidos);
+
+
+            var tabla1= document.getElementById("tabla1");
+            tabla1.appendChild(tr);
+
+
+        }
+        </script>
+    </head>
+    <body id="cuerpo">
+            <table id="tabla1">
+
+            </table>
+        
+            <input type="text" name="nombre" id="nombre"/>
+            <input type="text" name="apellidos" id="apellidos"/>
+            
+            <input type="button" value="crearTabla" onclick="crearTabla()"/>     
+          
+    </body>
+</html>
