@@ -1,19 +1,16 @@
 function validarCajaNoEstaVacia(idcaja) {
-
-    var eCaja= document.getElementById(idcaja);
-    if (eCaja.value != "") {
+  var eCaja = document.getElementById(idcaja);
+  if (eCaja.value != "") {
     return true;
-    } else {
-     return false;
-    }
+  } else {
+    return false;
   }
+}
 
-  function validarImporteMinimo(caja, importeMinimo) {
-    /*
-    if (importe >=100) {
-      return true;
-    }else return false;
-    */
-    var importeCaja=document.getElementById(caja).value;
-    return importeCaja>=importeMinimo?true:false;
-  }
+function validarImporteMinimo(caja, importeMinimo) {
+  var importeCaja = document.getElementById(caja).value;
+
+  if (importeCaja >= importeMinimo) {
+    return true;
+  } else return false;
+}

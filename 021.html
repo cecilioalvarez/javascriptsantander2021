@@ -29,6 +29,8 @@
           validarCajaNoEstaVacia("concepto") 
           && 
           validarCajaNoEstaVacia("importe")
+          &&
+          validarImporteMinimo("importe",100)
         ) {
           alert("todo ok");
           return true;
