@@ -43,28 +43,20 @@
 
 
       function validar() {
-        var nombre = document.getElementById("nombre").value;
-        var edad = document.getElementById("edad").value;
        
         if (validarCajaNoEstaVacia("nombre") && validarCajaNoEstaVacia("edad")) {
           alert("todo ok");
           return true;
         } else {
-          if (nombre == "") {
-            var errornombre = document.getElementById("errornombre");
-            errornombre.style.display = "inline";
-          }
-          if (edad == "") {
-            var erroredad = document.getElementById("erroredad");
-            erroredad.style.display = "inline";
-          }
+          mostrarErrorCaja("nombre","errornombre");
+          mostrarErrorCaja("edad","erroredad");
           return false;
         }
       }
     </script>
   </head>
   <body id="cuerpo">
-    <form action="destino" id="formulario1" onsubmit="return validar()">
+    <form action="destino" id="formulario1" onsubmit=" validar()">
       <p>
         Nombre:<input
           type="text"

@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <style>
+      #formulario1 span {
+        color: red;
+        display: none;
+      }
+    </style>
+    <script type="text/javascript" src="validadores.js"></script>
+    <script type="text/javascript" src="formateadores.js"></script>
+    <script type="text/javascript">
+      function validarNumeroCaja(event) {
+        mostrarErrorCaja("numero", "errornumero");
+      }
+
+      function validarConceptoCaja(event) {
+        mostrarErrorCaja("concepto", "errorconcepto");
+      }
+
+      function validarImporteCaja(event) {
+        mostrarErrorCaja("importe", "errorimporte");
+      }
+
+      function validar() {
+        if (
+          validarCajaNoEstaVacia("numero") &&
+          validarCajaNoEstaVacia("concepto") 
+          && 
+          validarCajaNoEstaVacia("importe")
+        ) {
+          alert("todo ok");
+          return true;
+        } else {
+          mostrarErrorCaja("numero", "errornumero");
+          mostrarErrorCaja("concepto", "errorconcepto");
+          mostrarErrorCaja("importe", "errorimporte");
+          return false;
+        }
+      }
+    </script>
+  </head>
+  <body id="cuerpo">
+    <form action="destino" id="formulario1" onsubmit="return validar()">
+      <p>
+        Numero:<input
+          type="text"
+          name="numero"
+          id="numero"
+          onkeyup="validarNumeroCaja(event)"
+        />
+        <span id="errornumero">falta numero</span>
+      </p>
+      <p>
+        Concepto<input
+          type="text"
+          name="concepto"
+          id="concepto"
+          onkeyup="validarConceptoCaja(event)"
+        />
+        <span id="errorconcepto">falta el concepto</span>
+      </p>
+
+      <p>
+        Impporte<input
+          type="text"
+          name="importe"
+          id="importe"
+          onkeyup="validarImporteCaja(event)"
+        />
+        <span id="errorimporte">falta el importe</span>
+      </p>
+      <input type="submit" value="enviar" />
+    </form>
+  </body>
+</html>
