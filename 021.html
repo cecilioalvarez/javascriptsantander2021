@@ -2,7 +2,6 @@
   <head>
     <style>
       #formulario1 span {
-        color: red;
         display: none;
       }
     </style>
@@ -10,17 +9,18 @@
     <script type="text/javascript" src="formateadores.js"></script>
     <script type="text/javascript">
 
-      
+     
+
       function validarNumeroCaja(event) {
-        mostrarErrorCaja("numero", "errornumero");
+        mostrarErrorCaja("numero", "errornumero","blue");
       }
 
       function validarConceptoCaja(event) {
-        mostrarErrorCaja("concepto", "errorconcepto");
+        mostrarErrorCaja("concepto", "errorconcepto","red");
       }
 
       function validarImporteCaja(event) {
-        mostrarErrorCaja("importe", "errorimporte");
+        mostrarErrorCaja("importe", "errorimporte","orange");
       }
 
       function validar() {
@@ -33,9 +33,9 @@
           alert("todo ok");
           return true;
         } else {
-          mostrarErrorCaja("numero", "errornumero");
-          mostrarErrorCaja("concepto", "errorconcepto");
-          mostrarErrorCaja("importe", "errorimporte");
+          mostrarErrorCaja("numero", "errornumero","blue");
+          mostrarErrorCaja("concepto", "errorconcepto","red");
+          mostrarErrorCaja("importe", "errorimporte","orange");
           return false;
         }
       }
