@@ -1,40 +1,52 @@
 <html>
   <head>
     <style>
-      table,
-      td {
-        border: 1px solid black;
-      }
-      #erroredad,
-      #errornombre {
+    
+     #formulario1 span {
         color: red;
         display: none;
       }
     </style>
     <script type="text/javascript">
-      function validarNombreCaja(event) {
-        var errornombre = document.getElementById("errornombre");
-        if (event.target.value != "") {
-          errornombre.style.display = "none";
+
+      function validarCajaNoEstaVacia(idcaja) {
+
+        var eCaja= document.getElementById(idcaja);
+        if (eCaja.value != "") {
+        return true;
         } else {
-          errornombre.style.display = "inline";
+         return false;
         }
       }
 
-      function validarEdadCaja(event) {
-        var erroredad = document.getElementById("erroredad");
-        if (event.target.value != "") {
-          erroredad.style.display = "none";
+
+      function mostrarErrorCaja(idcaja,idspanerror) {
+       
+        var eError= document.getElementById(idspanerror);
+
+        if (validarCajaNoEstaVacia(idcaja)) {
+          eError.style.display = "none";
         } else {
-          erroredad.style.display = "inline";
+          eError.style.display = "inline";
         }
+
       }
+
+
+      function validarNombreCaja(event) {
+       mostrarErrorCaja("nombre","errornombre");
+      }
+
+      function validarEdadCaja(event) {
+        mostrarErrorCaja("edad","erroredad");
+      }
+
 
       function validar() {
         var nombre = document.getElementById("nombre").value;
         var edad = document.getElementById("edad").value;
-
-        if (nombre != "" && edad != "") {
+       
+        if (validarCajaNoEstaVacia("nombre") && validarCajaNoEstaVacia("edad")) {
           alert("todo ok");
           return true;
         } else {
@@ -52,7 +64,7 @@
     </script>
   </head>
   <body id="cuerpo">
-    <form action="destino" onsubmit="return validar()">
+    <form action="destino" id="formulario1" onsubmit="return validar()">
       <p>
         Nombre:<input
           type="text"
@@ -73,5 +85,6 @@
       </p>
       <input type="submit" value="enviar" />
     </form>
+  
   </body>
 </html>
