@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <script type="text/javascript">
+      function pulsar() {
+
+      var textos = ["hola","que","tal","estas","tu"];
+      var selecionado="";
+      
+      for (var i=0;i<textos.length;i++) {
+
+        if (selecionado.length<textos[i].length) {
+          selecionado=textos[i];
+        }
+
+      }
+      console.log(selecionado);
+      }
+
+    </script>
+    <body id="cuerpo">
+      <form>
+      <input type="text" name="numero" id="numero"/>
+      <input type="button" value="enviar" onclick="pulsar()" />
+    </form>
+  </body>
+</html>
