@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <script type="text/javascript">
+      function pulsar() {
+
+        var numero= parseInt(document.getElementById("numero").value);
+        for (var i=0;i<numero;i++) {
+
+          //console.log(i);
+          var cuerpo= document.getElementById("cuerpo");
+          var parrafo= document.createElement("p");
+          var texto= document.createTextNode(i);
+          parrafo.appendChild(texto);
+          cuerpo.appendChild(parrafo);
+        }
+
+      }
+
+    </script>
+    <body id="cuerpo">
+      <form>
+      <input type="text" name="numero" id="numero"/>
+      <input type="button" value="enviar" onclick="pulsar()" />
+    </form>
+  </body>
+</html>
